@@ -3034,10 +3034,10 @@ ul.mailbox-list li:hover a, ul.h-list li:hover a {
 .color-line {
     background: #f7f9fa;
     height: 6px;
-    background-image: -webkit-linear-gradient(left,#34495e,#34495e 25%,#9b59b6 25%,#9b59b6 35%,#3498db 35%,#3498db 45%,#62cb31 45%,#62cb31 55%,#ffb606 55%,#ffb606 65%,#e67e22 65%,#e67e22 75%,#e74c3c 85%,#e74c3c 85%,#c0392b 85%,#c0392b 100%);
-    background-image: -moz-linear-gradient(left,#34495e,#34495e 25%,#9b59b6 25%,#9b59b6 35%,#3498db 35%,#3498db 45%,#62cb31 45%,#62cb31 55%,#ffb606 55%,#ffb606 65%,#e67e22 65%,#e67e22 75%,#e74c3c 85%,#e74c3c 85%,#c0392b 85%,#c0392b 100%);
-    background-image: -ms-linear-gradient(left,#34495e,#34495e 25%,#9b59b6 25%,#9b59b6 35%,#3498db 35%,#3498db 45%,#62cb31 45%,#62cb31 55%,#ffb606 55%,#ffb606 65%,#e67e22 65%,#e67e22 75%,#e74c3c 85%,#e74c3c 85%,#c0392b 85%,#c0392b 100%);
-    background-image: linear-gradient(to right,#34495e,#34495e 25%,#9b59b6 25%,#9b59b6 35%,#3498db 35%,#3498db 45%,#62cb31 45%,#62cb31 55%,#ffb606 55%,#ffb606 65%,#e67e22 65%,#e67e22 75%,#e74c3c 85%,#e74c3c 85%,#c0392b 85%,#c0392b 100%);
+    background-image: -webkit-linear-gradient(left,#1f1f20,#1f1f20 25%,#343235 25%,#343235 35%,#303131 35%,#303131 45%,#525451 45%,#525451 55%,#6a6966 55%,#6a6966 65%,#898786 65%,#898786 75%,#b0aead 85%,#b0aead 85%,#e2dede 85%,#e2dede 100%);
+    background-image: -moz-linear-gradient(left,#1f1f20,#1f1f20 25%,#343235 25%,#343235 35%,#303131 35%,#303131 45%,#525451 45%,#525451 55%,#6a6966 55%,#6a6966 65%,#898786 65%,#898786 75%,#b0aead 85%,#b0aead 85%,#e2dede 85%,#e2dede 100%);
+    background-image: -ms-linear-gradient(left,#1f1f20,#1f1f20 25%,#343235 25%,#343235 35%,#303131 35%,#303131 45%,#525451 45%,#525451 55%,#6a6966 55%,#6a6966 65%,#898786 65%,#898786 75%,#b0aead 85%,#b0aead 85%,#e2dede 85%,#e2dede 100%);
+    background-image: linear-gradient(to right,#1f1f20,#1f1f20 25%,#343235 25%,#343235 35%,#303131 35%,#303131 45%,#525451 45%,#525451 55%,#6a6966 55%,#6a6966 65%,#898786 65%,#898786 75%,#b0aead 85%,#b0aead 85%,#e2dede 85%,#e2dede 100%);
     background-size: 100% 6px;
     background-position: 50% 100%;
     background-repeat: no-repeat;
@@ -3260,8 +3260,8 @@ ul.mailbox-list li:hover a, ul.h-list li:hover a {
     padding-left: 0px;
 }
 .btn-success.loginbtn {
-    background-color: #e12503;
-    border-color: #e12503;
+    background-color: #4c4848;
+    border-color: #4c4848;
 }
 .lock-inner i {
     font-size: 60px;
