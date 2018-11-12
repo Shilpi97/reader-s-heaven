@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Admin | Reader's Heaven</title>
+    <title>Admin List | Reader's Heaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -50,12 +50,6 @@
 		============================================ -->
     <link rel="stylesheet" href="./css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="./css/calendar/fullcalendar.print.min.css">
-    <!-- modals CSS
-		============================================ -->
-    <link rel="stylesheet" href="./css/modals.css">
-    <!-- forms CSS
-		============================================ -->
-    <link rel="stylesheet" href="./css/form/all-type-forms.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="./css/style.css">
@@ -72,15 +66,20 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    
+   
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
-            
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="logo-pro">
+                  
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <%@ include file="header.jsp"%>
-                <!--  mobile menu patyu --> 
+ <%@ include file="header.jsp"%>
+            <!-- Mobile Menu end -->
             <div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -89,14 +88,16 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcome-heading">
-                                            
+                                            <form role="search" class="">
+                                                
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Add Admin</span>
+                                            <li><span class="bread-blod">Admin List</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -107,76 +108,79 @@
                 </div>
             </div>
         </div>
-        <!-- Basic Form Start -->
-        <div class="basic-form-area mg-tb-15">
+        <div class="product-status mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
-                   
-                </div>
-                <div class="row" style="margin-top:4%; margin-bottom:3%;">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="margin-left:20%;">
-                        <div class="sparkline10-list mt-b-30">
-                            <div class="sparkline10-hd">
-                                <div class="main-sparkline10-hd">
-                                    <h1>Add admin details<span class="basic-ds-n"></span></h1>
-                                </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>Admin List</h4>
+                            <div class="add-product">
+                                <a href="product-edit.html">Add Admin</a>
                             </div>
-                            <div class="sparkline10-graph">
-                                <div class="basic-login-form-ad">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="basic-login-inner inline-basic-form">
-                                                <form action="./addAdminServlet" method="post">
-                                                     <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Username</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="email" name="email" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br/>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Password</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" name="password" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br/>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Confirm Password</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" name="cpassword" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <br/>
-                                                   
-                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-left:40%;">
-                                                     <button class="btn btn-success btn-block loginbtn" value="Add">Add</button>
-                                                     </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <table>
+                                <tr>
+                                   
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                   
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                   
+                                    <td>Jewelery Title 1</td>
+                                    <td>
+                                        <button class="pd-setting">Active</button>
+                                        <!-- ds disabled 6 ane ps pause 6 -->
+                                    </td>
+                                    
+                                    <td>
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                               <tr>
+                                   
+                                    <td>Jewelery Title 10</td>
+                                    <td>
+                                        <button class="ds-setting">Disable</button>
+                                        <!-- ds disabled 6 ane ps pause 6 -->
+                                    </td>
+                                    
+                                    <td>
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                   
+                                    <td>Jewelery Title 100</td>
+                                    <td>
+                                        <button class="pd-setting">Active</button>
+                                        <!-- ds disabled 6 ane ps pause 6 -->
+                                    </td>
+                                    
+                                    <td>
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="custom-pagination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
-                 </div>
-            
+                </div>
             </div>
         </div>
-        <!-- Basic Form End-->
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
@@ -222,13 +226,15 @@
 		============================================ -->
     <script src="./js/metisMenu/metisMenu.min.js"></script>
     <script src="./js/metisMenu/metisMenu-active.js"></script>
-    <!-- tab JS
+    <!-- morrisjs JS
 		============================================ -->
-    <script src="./js/tab.js"></script>
-    <!-- icheck JS
+    <script src="./js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="./js/sparkline/jquery.charts-sparkline.js"></script>
+    <!-- calendar JS
 		============================================ -->
-    <script src="./js/icheck/icheck.min.js"></script>
-    <script src="./js/icheck/icheck-active.js"></script>
+    <script src="./js/calendar/moment.min.js"></script>
+    <script src="./js/calendar/fullcalendar.min.js"></script>
+    <script src="./js/calendar/fullcalendar-active.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="./js/plugins.js"></script>

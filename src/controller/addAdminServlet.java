@@ -5,21 +5,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+			
 
 import DAO.loginDAO;
-import bean.adminBean;
+
 
 /**
  * Servlet implementation class loginServlet
  */
-public class loginServlet extends HttpServlet {
+public class addAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public addAdminServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -41,26 +41,20 @@ public class loginServlet extends HttpServlet {
 		//System.out.println("hii shilpi");
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
+		String cpassword=request.getParameter("cpassword");
 		try {
-			System.out.println("hii shilpi in try");
-		adminBean user=new loginDAO().checkLogin(email, password);
-		System.out.println("hii shilpi after checklogin");
-		if(user!=null)
-		{
-			HttpSession session=request.getSession();	
-			session.setAttribute("user_id", user.getAdmin_id());
-			response.sendRedirect("dashboard.jsp");
-		}
-		else
-		{
-			response.sendRedirect("login.jsp");
+			if (password.equals(cpassword)) {
+				int user_id = new loginDAO().addUser(email, password);
+				System.out.println(user_id);
+					response.sendRedirect("./dashboard.jsp");
+				
+			} else {
+				System.out.println("Password Not Match");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		
-		}
-		catch(Exception e)
-		{
-			System.out.println("Login Servlet "+e);
-		}
 	}
 
 }

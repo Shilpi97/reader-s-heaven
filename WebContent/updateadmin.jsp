@@ -96,7 +96,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Add Admin</span>
+                                            <li><span class="bread-blod">Update Admin</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -118,7 +118,7 @@
                         <div class="sparkline10-list mt-b-30">
                             <div class="sparkline10-hd">
                                 <div class="main-sparkline10-hd">
-                                    <h1>Add admin details<span class="basic-ds-n"></span></h1>
+                                    <h1>Update admin details<span class="basic-ds-n"></span></h1>
                                 </div>
                             </div>
                             <div class="sparkline10-graph">
@@ -126,14 +126,14 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="basic-login-inner inline-basic-form">
-                                                <form action="./addAdminServlet" method="post">
+                                                <form action="#">
                                                      <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">Username</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="email" name="email" class="form-control" />
+                                                                <input type="email" disabled class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,7 +144,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Password</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" name="password" class="form-control" />
+                                                                <input type="password" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,14 +155,14 @@
                                                                 <label class="login2 pull-right pull-right-pro">Confirm Password</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" name="cpassword" class="form-control" />
+                                                                <input type="password" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <br/>
                                                    
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-left:40%;">
-                                                     <button class="btn btn-success btn-block loginbtn" value="Add">Add</button>
+                                                     <button class="btn btn-success btn-block loginbtn" value="Login">Update</button>
                                                      </div>
                                                 </form>
                                             </div>

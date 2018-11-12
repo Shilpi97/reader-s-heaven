@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import bean.userBean;
+import bean.adminBean;
 import util.DBConnection;
 
 public class loginDAO {
@@ -13,25 +13,25 @@ public class loginDAO {
 	 private final Connection con;
 		
 		public loginDAO()  throws ClassNotFoundException, SQLException {
-			System.out.println("hii shilpi in database");
+			//System.out.println("hii shilpi in database");
 	        con = DBConnection.getInstance().getConnection();   
 	    }
 		
-		public userBean checkLogin(String email,String password) {
-			System.out.println("hii shilpi in dao");
+		public adminBean checkLogin(String email,String password) {
+			//System.out.println("hii shilpi in dao");
 			Statement stmt;
-			userBean user=null;
+			adminBean user=null;
 			int n=0;
 			 try {
-			        String query="select * from user where email= '"+email+"'and password='"+password+"' and status=0;";
+			        String query="select * from admin where email= '"+email+"'and password='"+password+"' and isActive=1;";
 			        System.out.println(query);
 		    	  stmt = con.createStatement();        
 		          ResultSet rs = stmt.executeQuery(query);
 		          while(rs.next()) {
 		        	n++;
-		        	user=new userBean();
-		        	System.out.println(rs.getString("name"));
-		        	user.setUser_id(rs.getInt("user_id"));
+		        	user=new adminBean();
+		        	//System.out.println(rs.getString("name"));
+		        	user.setAdmin_id(rs.getInt("admin_id"));
 		          }
 		          if(n==1)
 		          {
@@ -46,6 +46,25 @@ public class loginDAO {
 		          System.out.println("dao"+e);
 		      }
 			return null;
+		}
+		public int addUser(String email,String password) {
+			int n=0;
+			int id=0;
+			try {
+				String query="insert into admin values(null,'"+email+"','"+password+"',1);";
+			
+				Statement stmt = con.createStatement();
+				n = stmt.executeUpdate( query );
+				
+				
+				
+			}
+			 catch(SQLException e) {
+		            System.out.println(e.getMessage());
+		        }
+			return n;
+			
+			
 		}
 
 }
