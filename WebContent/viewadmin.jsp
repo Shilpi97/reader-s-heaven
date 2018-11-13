@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page autoFlush="true" buffer="1094kb"%>
+    
+    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.List" %>
+    
+    <%@page import="bean.adminBean" %>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -115,65 +123,64 @@
                         <div class="product-status-wrap">
                             <h4>Admin List</h4>
                             <div class="add-product">
-                                <a href="product-edit.html">Add Admin</a>
+                                <a href="addadmin.jsp">Add Admin</a>
                             </div>
                             <table>
                                 <tr>
                                    
-                                    <th>Name</th>
+                                    <th>Email</th>
                                     <th>Status</th>
                                    
                                     <th>Action</th>
                                 </tr>
+                                  <%List<adminBean>b=(ArrayList)request.getAttribute("listOfAdmin");
+							if(b==null){ %>
+							 <jsp:forward page="/adminServlet?action=viewadmin.jsp" />
+		 					<% }else{
+		 						b=(ArrayList)request.getAttribute("listOfAdmin");%>
+		 				
+		 						<% 
+		 						for(int i=0;i<b.size();i++)
+								{
+									adminBean admin=b.get(i);
+		 					
+							%>
                                 <tr>
                                    
-                                    <td>Jewelery Title 1</td>
+                                    <td><%= admin.getEmail() %></td>
                                     <td>
-                                        <button class="pd-setting">Active</button>
-                                        <!-- ds disabled 6 ane ps pause 6 -->
+                                  <%   int isactive=admin.getIsActive(); 
+                                    if(isactive!=1)
+                                    {%>
+                                        <button class="ds-setting">Disabled</button>
+                                        </td>
+                                        <td></td>
+                                    <% } 
+                                     else
+                                     { %>
+                                     <button class="pd-setting">Active</button>
+                                    
+                                       <!-- ds disabled 6 ane ps pause 6 -->
                                     </td>
                                     
                                     <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <a href="./updateadmin.jsp?id=<%=admin.getAdmin_id()%>"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                        <a href="./deleteAdminServlet?id=<%=admin.getAdmin_id()%>"><button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
+                                    <%} %> 
                                 </tr>
-                               <tr>
-                                   
-                                    <td>Jewelery Title 10</td>
-                                    <td>
-                                        <button class="ds-setting">Disable</button>
-                                        <!-- ds disabled 6 ane ps pause 6 -->
-                                    </td>
-                                    
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                   
-                                    <td>Jewelery Title 100</td>
-                                    <td>
-                                        <button class="pd-setting">Active</button>
-                                        <!-- ds disabled 6 ane ps pause 6 -->
-                                    </td>
-                                    
-                                    <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                        <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                    </td>
-                                </tr>
+                               <% }
+		 						} %>
                             </table>
                             <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
+                                   <!--  <ul class="pagination">
                                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                                         <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </nav>
                             </div>
                         </div>

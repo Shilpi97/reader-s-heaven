@@ -66,5 +66,25 @@ public class loginDAO {
 			
 			
 		}
+		public int updateUser(int id,String email,String password) {
+			int n=0;
+			System.out.println(id+email+password);
+			//int id=0;
+			try {
+				String query="update admin set email= '" + email + "' , password='" + password + "' where admin_id = " + id + " ; "; 
+			
+				Statement stmt = con.createStatement();
+				n = stmt.executeUpdate( query );
+				
+				
+				
+			}
+			 catch(SQLException e) {
+		            System.out.println(e.getMessage());
+		        }
+			return n;
+			
+			
+		}
 
 }

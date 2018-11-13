@@ -29,5 +29,44 @@
     <servlet-name>addAdminServlet</servlet-name>
     <url-pattern>/addAdminServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>adminServlet</display-name>
+    <servlet-name>adminServlet</servlet-name>
+    <servlet-class>controller.adminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminServlet</servlet-name>
+    <url-pattern>/adminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteAdminServlet</display-name>
+    <servlet-name>deleteAdminServlet</servlet-name>
+    <servlet-class>controller.deleteAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteAdminServlet</servlet-name>
+    <url-pattern>/deleteAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateAdminServlet</display-name>
+    <servlet-name>updateAdminServlet</servlet-name>
+    <servlet-class>controller.updateAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateAdminServlet</servlet-name>
+    <url-pattern>/updateAdminServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>update1AdminServlet</display-name>
+    <servlet-name>update1AdminServlet</servlet-name>
+    <servlet-class>controller.update1AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update1AdminServlet</servlet-name>
+    <url-pattern>/update1AdminServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

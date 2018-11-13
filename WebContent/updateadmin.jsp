@@ -1,10 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page autoFlush="true" buffer="1094kb"%>
+    
+    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.List" %>
+    
+    <%@page import="bean.adminBean" %>
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Admin | Reader's Heaven</title>
+    <title>Update Admin | Reader's Heaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -126,14 +134,28 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="basic-login-inner inline-basic-form">
-                                                <form action="#">
+                                             <%List<adminBean>b=(ArrayList)request.getAttribute("listAdmin");
+							if(b==null){ %>
+							 <jsp:forward page="/updateAdminServlet?action=updateadmin.jsp" />
+		 					<% }else{
+		 						b=(ArrayList)request.getAttribute("listAdmin");%>
+		 				
+		 						<% 
+		 						for(int i=0;i<b.size();i++)
+								{
+									adminBean admin=b.get(i);
+									System.out.println(admin.getPassword());
+		 					
+							%>
+                                                <form action="./update1AdminServlet?id=<%=admin.getAdmin_id()%>" method="post">
+                                               
                                                      <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">Username</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="email" disabled class="form-control" />
+                                                                <input type="email" name="email" value="<%=admin.getEmail()%>" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,7 +166,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Password</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" class="form-control" />
+                                                                <input type="password" name="password" value="<%=admin.getPassword()%>" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,7 +177,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Confirm Password</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" class="form-control" />
+                                                                <input type="password" name="cpassword" value="<%=admin.getPassword()%>" class="form-control" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -164,7 +186,10 @@
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-left:40%;">
                                                      <button class="btn btn-success btn-block loginbtn" value="Login">Update</button>
                                                      </div>
+                                                    
                                                 </form>
+                                                 <% }
+		 						} %>
                                             </div>
                                         </div>
                                     </div>
