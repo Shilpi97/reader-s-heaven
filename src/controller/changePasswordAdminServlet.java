@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.loginDAO;
-import bean.adminBean;
+import DAO.adminDAO;
 
 /**
  * Servlet implementation class loginServlet
  */
-public class loginServlet extends HttpServlet {
+public class changePasswordAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public changePasswordAdminServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -39,28 +39,39 @@ public class loginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//System.out.println("hii shilpi");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		try {
-			System.out.println("hii shilpi in try");
-		adminBean user=new loginDAO().checkLogin(email, password);
-		System.out.println("hii shilpi after checklogin");
-		if(user!=null)
-		{
-			HttpSession session=request.getSession();	
-			session.setAttribute("user_id", user.getAdmin_id());
-			response.sendRedirect("dashboard.jsp");
+		HttpSession session=request.getSession();
+		Integer user_id=(Integer)session.getAttribute("user_id");
+		System.out.println("id:  "+user_id);
+		if(user_id==null) {
+			response.sendRedirect("./index.jsp");
 		}
 		else
 		{
-			response.sendRedirect("index.jsp");
+		//int id=Integer.parseInt(request.getParameter("id"));
+		String password=request.getParameter("password");
+		String npassword=request.getParameter("npassword");
+		String cpassword=request.getParameter("cpassword");
+		try {
+			if(password!=null) {
+				int user_if = new adminDAO().checkPassword(user_id,password);
+				System.out.println("hello"+user_if);
+				if(user_if==1) {
+			if (npassword.equals(cpassword)) {
+				int user_i = new loginDAO().changePassword(user_id,npassword);
+				System.out.println(user_i);
+					response.sendRedirect("./dashboard.jsp");
+				
+			} else {
+				System.out.println("New Password Not Match");
+				response.sendRedirect("./changepasswordadmin.jsp");
+			}
+			}else
+			{System.out.println("Current Password is Not Correct");
+			response.sendRedirect("./changepasswordadmin.jsp");}}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		
-		}
-		catch(Exception e)
-		{
-			System.out.println("Login Servlet "+e);
-		}
 	}
-
+	}
 }

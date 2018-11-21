@@ -7,19 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.loginDAO;
-import bean.adminBean;
+import DAO.dashboardDAO;
+import bean.dashboard_adminBean;
+import java.util.List;
 
 /**
  * Servlet implementation class loginServlet
  */
-public class loginServlet extends HttpServlet {
+public class dashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public dashboardServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -30,7 +31,20 @@ public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
+		List<dashboard_adminBean> listOfLibrary = null;
+		String str=request.getParameter("action");
+			try {
+				System.out.println("in try");
+			listOfLibrary = new dashboardDAO().getDashboardDetails();
+			request.setAttribute("listOfLibrary", listOfLibrary);
+			request.getRequestDispatcher(str).forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("in catch");
+			e.printStackTrace();
+			}
+
 	}
 	//System.out.println("happy birthday");
 	/**
@@ -39,28 +53,6 @@ public class loginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//System.out.println("hii shilpi");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		try {
-			System.out.println("hii shilpi in try");
-		adminBean user=new loginDAO().checkLogin(email, password);
-		System.out.println("hii shilpi after checklogin");
-		if(user!=null)
-		{
-			HttpSession session=request.getSession();	
-			session.setAttribute("user_id", user.getAdmin_id());
-			response.sendRedirect("dashboard.jsp");
-		}
-		else
-		{
-			response.sendRedirect("index.jsp");
-		}
-		
-		}
-		catch(Exception e)
-		{
-			System.out.println("Login Servlet "+e);
-		}
 	}
 
 }

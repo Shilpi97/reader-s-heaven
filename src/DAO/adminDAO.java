@@ -1,4 +1,4 @@
-package DAO;
+package DAO;		
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -81,5 +81,27 @@ public class adminDAO {
 		          System.out.println("dao"+e);
 		      }
 		      return adminList;
+		   }
+		 public int checkPassword(int id,String password){
+		      //List<adminBean> adminList =new ArrayList<adminBean>();
+		      Statement stmt;
+		      int flag=0;
+		     // adminBean b;
+		      try {
+		        
+		    	  stmt = con.createStatement();        
+		          ResultSet rs = stmt.executeQuery("select * from admin where admin_id= " + id + " AND password='"+ password+ "'; ");
+		         System.out.println(rs);
+		          while ( rs.next() ) 
+		          {
+		              flag=1;
+		             
+		          }    
+		    	  
+		      }  catch(SQLException e) {
+		          System.out.println("dao"+e);
+		      }
+		      
+		      return flag;
 		   }
 }

@@ -60,7 +60,7 @@ public class loginDAO {
 				
 			}
 			 catch(SQLException e) {
-		            System.out.println(e.getMessage());
+		            System.out.println(e.getMessage()+"jhfg");
 		        }
 			return n;
 			
@@ -72,6 +72,26 @@ public class loginDAO {
 			//int id=0;
 			try {
 				String query="update admin set email= '" + email + "' , password='" + password + "' where admin_id = " + id + " ; "; 
+			
+				Statement stmt = con.createStatement();
+				n = stmt.executeUpdate( query );
+				
+				
+				
+			}
+			 catch(SQLException e) {
+		            System.out.println(e.getMessage());
+		        }
+			return n;
+			
+			
+		}
+		public int changePassword(int id,String password) {
+			int n=0;
+			System.out.println("id"+id);
+			//int id=0;
+			try {
+				String query="update admin set password='" + password + "' where admin_id = " + id + "  "; 
 			
 				Statement stmt = con.createStatement();
 				n = stmt.executeUpdate( query );

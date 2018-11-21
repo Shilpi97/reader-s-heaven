@@ -4,9 +4,9 @@ Morris.Area({
         element: 'morris-area-chart',
         data: [{
             period: '2012',
-            Bags: 0,
-            Shoes: 0,
-            Jewelery: 0
+            Bags: 100,
+            Shoes: 100,
+            Jewelery: 100
         }, {
             period: '2013',
             Bags: 130,

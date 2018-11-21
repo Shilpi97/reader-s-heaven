@@ -5,104 +5,45 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="header-top-wraper">
                                 <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                        <div class="menu-switcher-pro">
-                                           </div>
+                                    <div class="col-lg-1 col-md-2 col-sm-1 col-xs-12">
+                                        
+                                        <img alt="logo" src="img/logo.png" height="90px" width="110px">
+                                          
                                     </div>
-                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+                                    <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12">
+                                     
                                         <div class="header-top-menu tabl-d-n">
+                                       
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                                <li class="nav-item"><a href="dashboard.jsp" class="nav-link"><span style="color:white !important;">Home</span></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">About</a>
+                                                <li class="nav-item"><a href="viewbook.jsp" class="nav-link"><span style="color:white !important;">Book</span></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Services</a>
+                                                <li class="nav-item"><a href="library.jsp" class="nav-link"><span style="color:white !important;">Library</span></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Support</a>
-                                                </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
-                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <ul class="nav navbar-nav mai-top-nav header-right-menu" style="margin-right:5%">
                                                
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
-                                                        </div>
-                                                        <ul class="notification-menu">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-check adminpro-checked-pro admin-check-pro" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-cloud adminpro-cloud-computing-down" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-eraser adminpro-shield" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="fa fa-line-chart adminpro-analytics-arrow" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                                
                                                 <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
-															<span class="admin-name">Advanda Cro</span>
-															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
+                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle" >
+															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true" style="color:white !important;"></i>
+															<span class="admin-name">Admin</span>
+															<i class="fa fa-angle-down adminpro-icon adminpro-down-arrow" style="color:white !important;"></i>
 														</a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="register.html"><span class="fa fa-plus author-log-ic"></span>Add Admin</a>
+                                                        <li><a href="addadmin.jsp"><span class="fa fa-plus author-log-ic" style="color:white !important;"></span><span style="color:white !important;">Add Admin</span></a>
                                                         </li>
-                                                        <li><a href="#"><span class="fa fa-lock author-log-ic"></span>Change Password</a>
+                                                        <li><a href="viewadmin.jsp"><span class="fa fa-eye author-log-ic" style="color:white !important;"></span><span style="color:white !important;">View Admin</span></a>
                                                         </li>
-                                                      <!--   <li><a href="lock.html"><span class="fa fa-diamond author-log-ic"></span> Lock</a>
-                                                        </li> 
-                                                        <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
-                                                        </li> -->
-                                                        <li><a href="login.jsp"><span class="fa fa-sign-out author-log-ic"></span>Log Out</a>
+                                                        <li><a href="changepasswordadmin.jsp"><span class="fa fa-lock author-log-ic" style="color:white !important;"></span><span style="color:white !important;">Change Password</span></a>
+                                                        </li>
+                                                        <li><a href="./logoutServlet"><span class="fa fa-sign-out author-log-ic" style="color:white !important;"></span><span style="color:white !important;">Log Out</span></a>
                                                         </li>
                                                     </ul>
                                                 </li>

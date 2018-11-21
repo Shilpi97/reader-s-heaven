@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.loginDAO;
-import bean.adminBean;
+import DAO.libraryDAO;
+import bean.userBean;
 
 /**
  * Servlet implementation class loginServlet
  */
-public class loginServlet extends HttpServlet {
+public class updateLibraryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public updateLibraryServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -38,23 +38,25 @@ public class loginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//System.out.println("hii shilpi");
+		System.out.println("hii shilpi");
+		
+		String library_name=request.getParameter("library_name");
+		String branch_name=request.getParameter("branch_name");
 		String email=request.getParameter("email");
-		String password=request.getParameter("password");
+		String branch_address=request.getParameter("branch_address");
+		
+		int library_address_id=Integer.parseInt(request.getParameter("id"));
+		System.out.println("hii ");
+		int pincode=Integer.parseInt(request.getParameter("pincode"));
+		String mobile_no=request.getParameter("mobile_no");
 		try {
-			System.out.println("hii shilpi in try");
-		adminBean user=new loginDAO().checkLogin(email, password);
-		System.out.println("hii shilpi after checklogin");
-		if(user!=null)
-		{
-			HttpSession session=request.getSession();	
-			session.setAttribute("user_id", user.getAdmin_id());
-			response.sendRedirect("dashboard.jsp");
-		}
-		else
-		{
-			response.sendRedirect("index.jsp");
-		}
+			
+				
+				if (new libraryDAO().updateLibraryAddress(library_name,library_address_id,branch_name,branch_address, mobile_no, pincode, email)) {
+					
+					
+					response.sendRedirect("./library.jsp");
+				}
 		
 		}
 		catch(Exception e)
