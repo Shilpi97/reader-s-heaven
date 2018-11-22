@@ -4,52 +4,45 @@ Morris.Area({
         element: 'morris-area-chart',
         data: [{
             period: '2012',
-            Bags: 100,
-            Shoes: 100,
-            Jewelery: 100
+            
+            Shoes: 0,Bags: 0
         }, {
             period: '2013',
-            Bags: 130,
-            Shoes: 100,
-            Jewelery: 80
+            
+            Shoes: 550,Bags: 275
         }, {
             period: '2014',
-            Bags: 80,
-            Shoes: 60,
-            Jewelery: 70
+            
+            Shoes: 700,Bags: 400
         }, {
             period: '2015',
-            Bags: 70,
-            Shoes: 200,
-            Jewelery: 160
+            
+            Shoes: 350,Bags: 270
         }, {
             period: '2016',
-            Bags: 180,
-            Shoes: 150,
-            Jewelery: 120
+            
+            Shoes: 550,Bags: 380
         }, {
             period: '2017',
-            Bags: 105,
-            Shoes: 100,
-            Jewelery: 90
+            
+            Shoes: 200,Bags: 300
         },
          {
             period: '2018',
-            Bags: 250,
-            Shoes: 150,
-            Jewelery: 200
+            
+            Shoes: 450,Bags: 250
         }],
         xkey: 'period',
-        ykeys: ['Bags', 'Shoes', 'Jewelery'],
-        labels: ['Bags', 'Shoes', 'Jewelery'],
+        ykeys: ['Shoes','Bags'],
+        labels: ['Total Sales','Books'],
         pointSize: 0,
         fillOpacity: 0.6,
-        pointStrokeColors:['#f75b36', '#00b5c2 ', '#008efa'],
+        pointStrokeColors:['#000066 ' , '#33ffff'],
         behaveLikeLine: true,
         gridLineColor: '#e0e0e0',
         lineWidth:0,
         hideHover: 'auto',
-        lineColors: ['#f75b36', '#00b5c2 ', '#008efa'],
+        lineColors: ['#000066 ' , '#33ffff'],
         resize: true
         
     });
@@ -59,46 +52,40 @@ Morris.Area({
         data: [{
                     period: '2012',
                     Bags: 0,
-                    Shoes: 0,
-                    Jewelery: 0
+                    Shoes: 0
+                    
                 }, {
                     period: '2013',
                     Bags: 50,
-                    Shoes: 15,
-                    Jewelery: 5
+                    Shoes: 15
                 }, {
                     period: '2014',
                     Bags: 20,
-                    Shoes: 50,
-                    Jewelery: 65
+                    Shoes: 50
                 }, {
                     period: '2015',
                     Bags: 60,
-                    Shoes: 12,
-                    Jewelery: 7
+                    Shoes: 12
                 }, {
                     period: '2016',
                     Bags: 30,
-                    Shoes: 20,
-                    Jewelery: 120
+                    Shoes: 20
                 }, {
                     period: '2017',
                     Bags: 25,
-                    Shoes: 80,
-                    Jewelery: 40
+                    Shoes: 80
                 }, {
                     period: '2018',
                     Bags: 10,
-                    Shoes: 10,
-                    Jewelery: 10
+                    Shoes: 10
                 }
 
 
                 ],
-                lineColors: ['#f75b36', '#00b5c2', '#8698b7'],
+                lineColors: ['#f75b36', '#00b5c2'],
                 xkey: 'period',
-                ykeys: ['Bags', 'Shoes', 'Jewelery'],
-                labels: ['Bags', 'Shoes', 'Jewelery'],
+                ykeys: ['Bags', 'Shoes'],
+                labels: ['Bag', 'Shoes'],
                 pointSize: 0,
                 lineWidth: 0,
                 resize:true,

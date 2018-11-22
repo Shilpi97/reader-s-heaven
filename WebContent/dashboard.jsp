@@ -199,7 +199,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
+                                            <span class="caption-subject text-uppercase"><b>Total Sales</b></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -212,10 +212,10 @@
                             </div>
                             <ul class="list-inline cus-product-sl-rp">
                                 <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Days</h5>
+                                    <h5><i class="fa fa-circle" style="color: #33ffff;"></i>Books</h5>
                                 </li>
                                 <li>
-                                    <h5><i class="fa fa-circle" style="color: #00b5c2;"></i>Month</h5>
+                                    <h5><i class="fa fa-circle" style="color: #000066;"></i>Rent</h5>
                                 </li>
                                 
                             </ul>
