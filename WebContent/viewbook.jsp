@@ -156,7 +156,7 @@
 									<td><%=book.getIsbn() %></td>
 									<td><%=book.getPages() %></td>
 									<td><%=book.getMrp() %></td>
-									<td><img src="<%=book.getPhoto() %>" alt="book"></img></td>
+									<td><img src="<%=book.getPhoto() %>  " alt="book"></img></td>
 									<td><%=book.getCategory_name() %></td>
 									<td><%=book.getDescription() %></td>
 									<td><%=book.getPublish_year() %></td>

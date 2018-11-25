@@ -47,7 +47,7 @@ public class addbookDao {
 			int n=0;
 			//int id=0;
 			try {
-				String query="insert into book values(null,'"+book_title+"','"+author+"',"+edition+",'"+publisher+"','"+isbn+"',"+pages+","+mrp+",'aayushi',"+categorys+",'"+description+"',"+publish_year+",'"+book_language+"',0,'"+strDate+"','"+
+				String query="insert into book values(null,'"+book_title+"','"+author+"',"+edition+",'"+publisher+"','"+isbn+"',"+pages+","+mrp+",'img/product/1.jpg',"+categorys+",'"+description+"',"+publish_year+",'"+book_language+"',0,'"+strDate+"','"+
 						modified_on+"');";
 			
 				Statement stmt = con.createStatement();

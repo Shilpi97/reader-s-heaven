@@ -49,7 +49,8 @@ public class addAdminServlet extends HttpServlet {
 					response.sendRedirect("./dashboard.jsp");
 				
 			} else {
-				System.out.println("Password Not Match");
+				System.out.println("Password Not Matched");
+				response.sendRedirect("./addadmin.jsp");
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage()+"hii");

@@ -155,8 +155,8 @@
                   						<td><%= book.getPincode()%></td>
                   						<td><%= book.getEmail()%></td>
                                     <td>
-                                         <a href="./updateLibrary.jsp?id=<%=book.getLibrary_address_id()%>"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                       <a href="./deleteLibrary1Servelt?id=<%=book.getLibrary_address_id()%>"> <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                         <a href="./updateLibrary.jsp?id=<%=book.getLibrary_address_id()%>"><button data-toggle="tooltip" title="Update" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                       <a href="./deleteLibrary1Servelt?id=<%=book.getLibrary_address_id()%>"> <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                 </tr>
                                 <% }
