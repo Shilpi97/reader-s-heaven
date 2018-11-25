@@ -155,7 +155,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Library Name</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Enter Library Name" name="library_name" value="<%=book.getLibrary_name() %>" />
+                                                                <input type="text" class="form-control" placeholder="Enter Library Name" name="library_name" title="only Characters and digits" pattern="[a-zA-Z0-9\s]*$" value="<%=book.getLibrary_name() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -165,7 +165,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Branch Name</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name" value="<%=book.getBranch_name() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name" title="only Characters and digits" pattern="[a-zA-Z0-9\s]*$" value="<%=book.getBranch_name() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -186,7 +186,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Branch Address</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                               <input type="text" class="form-control" placeholder="Enter Library Adress" name="branch_address" value="<%=book.getBranch_address()%>"/>
+                                                               <input type="text" class="form-control" placeholder="Enter Library Adress" name="branch_address" title="only Characters and digits" pattern="[a-zA-Z0-9,.\s]*$" value="<%=book.getBranch_address()%>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -200,7 +200,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                         <div class="form-select-list">
-                                                                            <input type="text" class="form-control basic-ele-mg-b-10" placeholder="Pincode" name="pincode" value="<%=book.getPincode() %>">
+                                                                            <input type="text" class="form-control basic-ele-mg-b-10" placeholder="Pincode" name="pincode"title="only digits" pattern="[0-9]{6}" value="<%=book.getPincode() %>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -210,7 +210,7 @@
                                                                     </div>
                                                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                                                         <div class="form-select-list">
-                                                                            <input type="text" class="form-control" placeholder="Enter Mobile No." name="mobile_no" value="<%=book.getContact_no() %>">
+                                                                            <input type="text" class="form-control" placeholder="Enter Mobile No." name="mobile_no"  title="only digits" pattern="[0-9]{10}" value="<%=book.getContact_no() %>">
                                                                         </div>
                                                                     </div>
                                                                 </div>
