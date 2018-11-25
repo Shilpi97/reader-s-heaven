@@ -18,6 +18,8 @@ import DAO.addbookDao;
 import DAO.loginDAO;
 //import DAO.loginDAO;
 import bean.addbookBean;
+import bean.libraryBean;
+import bean.library_addressBean;
 import bean.userBean;
 
 /**
@@ -42,15 +44,25 @@ public class addbookservlet extends HttpServlet {
 	//	System.out.println("happy birthday");
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<addbookBean> category =null;
+		//List<library_addressBean> library=null;
+		List<library_addressBean> library =null;
 		try {
+			System.out.println("In try1......");
 			category= new addbookDao().getAllcategory();
+			library=new addbookDao().getAllLibrary();
+			//library=new addbookDao().getAllLibrary();
+			
 			request.setAttribute("category", category);
+			request.setAttribute("library",library);
+			//request.setAttribute("library", library);
+			//request.getRequestDispatcher("addbook.jsp").forward(request, response);
 		request.getRequestDispatcher("addbook.jsp").forward(request, response);
+		//request.getRequestDispatcher("addbook.jsp").forward(request, response);
 	
 	
 }
 	catch(Exception e) {
-		System.out.println("in Catch");
+		System.out.println("in Catch1............."+e);
 	}
 	
 }
@@ -77,6 +89,9 @@ public class addbookservlet extends HttpServlet {
 		int publish_year = Integer.parseInt(request.getParameter("publish_year"));
 		String book_language=request.getParameter("book_language");
 		int categorys=Integer.parseInt(request.getParameter("categorys"));
+		int librarys=Integer.parseInt(request.getParameter("librarys"));
+		
+		int count=Integer.parseInt(request.getParameter("count"));
 		Date d = new Date();
 		SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
 		String strDate = date.format(d);
@@ -84,7 +99,8 @@ public class addbookservlet extends HttpServlet {
 		
 		try {
 			System.out.println("category  :"+categorys);
-			int book_id=new addbookDao().addbook(book_title,author,edition,publisher,isbn,pages,mrp,categorys,description,publish_year,book_language,strDate,modified_on,0);
+			System.out.println("librarys :"+ librarys);
+			int book_id=new addbookDao().addbook(book_title,author,edition,publisher,isbn,pages,mrp,categorys,description,publish_year,book_language,strDate,modified_on,0,count,librarys);
 			System.out.println("book id:"+book_id);
 			if(book_id>0)
 			{

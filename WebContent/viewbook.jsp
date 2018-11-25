@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList" %>
     <%@page import="java.util.List" %>
     <%@page import="bean.addbookBean" %>
+    <%@page import="bean.addbookqtyBean" %>
       <%@page autoFlush="true" buffer="1094kb"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -8,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>View book | Reader's Heaven</title>
+    <title>Add Admin | Reader's Heaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -122,7 +123,7 @@
                             </div>
                             <table>
                                 <tr>
-                                    
+                                    <th>BookID</th>
                                     <th>Book Title</th>
                                     <th>author</th>
                                     <th>edition</th>
@@ -135,20 +136,29 @@
                                     <th>description</th>
                                     <th>publish Year</th>
                                     <th>Book Language</th>
+                                    <th>Number of Quantity</th>
+                                    <th>Branch Name</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
-                               <%List<addbookBean>b=(ArrayList)request.getAttribute("book");
+                               <%List<addbookqtyBean>b=(ArrayList)request.getAttribute("book");
+                              
+                               
 							if(b==null){ %>
 							 <jsp:forward page="/viewbookservlet?action=viewbook.jsp" />
 		 					<% }else{
 		 						b=(ArrayList)request.getAttribute("book");
+		 						
+		 						
+		 						
 		 						for(int i=0;i<b.size();i++)
+		 							
 								{
-									addbookBean book=b.get(i);%>
+									addbookqtyBean book=b.get(i);
+									%>
 									
 									<tr>
-									
+									<td><%=book.getBook_id() %>
 									<td><%= book.getBook_title() %></td>
 									<td><%=book.getAuthor() %></td>
 									<td><%=book.getEdition() %></td>
@@ -156,11 +166,18 @@
 									<td><%=book.getIsbn() %></td>
 									<td><%=book.getPages() %></td>
 									<td><%=book.getMrp() %></td>
-									<td><img src="<%=book.getPhoto() %>  " alt="book"></img></td>
+									<td><img src="<%=book.getPhoto() %>" alt="book"></img></td>
 									<td><%=book.getCategory_name() %></td>
 									<td><%=book.getDescription() %></td>
 									<td><%=book.getPublish_year() %></td>
 									<td><%=book.getBook_language() %></td>
+									<td><%=book.getCount() %></td>
+									<td><%=book.getBranch_name() %></td>
+									
+									
+									
+									
+									
 									 <td>
                                        <a href="./updatebook.jsp?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></td>
                                       <td> <a href="./deletebookservlet?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a></td> 
@@ -168,7 +185,7 @@
 									
 									
                                     </tr>
-									  <% } } %> 
+									  <% }}  %> 
                                 </table>
                           </div>
                          </div>

@@ -71,11 +71,15 @@ public class updatebookservlet extends HttpServlet {
 		SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
 		//String strDate = date.format(d);
 		String modified_on=date.format(d);
+		int count=Integer.parseInt(request.getParameter("count"));
+		//int librarys=Integer.parseInt(request.getParameter("librarys"));
 		
+		System.out.println("count :"+ count);
 		
 		try {
 			System.out.println("category  :"+categorys);
-			int book_id=new addbookDao().updatebook(book_title,author,edition,publisher,isbn,pages,mrp,categorys,description,publish_year,book_language,modified_on,id);
+			System.out.println("count In try :"+ count);
+			int book_id=new addbookDao().updatebook(book_title,author,edition,publisher,isbn,pages,mrp,categorys,description,publish_year,book_language,modified_on,id,count);
 			System.out.println("book id:"+book_id);
 			if(book_id>0)
 			{

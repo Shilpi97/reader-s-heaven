@@ -2,7 +2,7 @@ package bean;
 
 
 
-public class addbookBean {
+public class addbookqtyBean {
 	
 	private int book_id;
 	private String book_title;
@@ -12,7 +12,6 @@ public class addbookBean {
 	private String isbn;
 	private int pages;
 	private int mrp;
-	private int count;
 	private String photo;
 	private int category_id;
 	private String category_name;
@@ -22,19 +21,19 @@ public class addbookBean {
 	private int status;
 	private String created_on;
 	private String modified_on;
+	private int count;
+	private String branch_name;
+	private int branch_id;
 	
-	public int getCount() {
-		return count;
-	}
-	public void setCount(int count) {
-		this.count = count;
-	}
 	public int getBook_id() {
 		return book_id;
 	}
 	public void setBook_id(int book_id) {
 		this.book_id = book_id;
 	}
+	
+	
+	
 	public String getBook_title() {
 		return book_title;
 	}
@@ -131,7 +130,25 @@ public class addbookBean {
 	public void setCategory_name(String category_name) {
 		this.category_name = category_name;
 	}
-	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public String getBranch_name() {
+		
+		return branch_name;
+	}
+	public void setBranch_name(String branch_name) {
+		this.branch_name = branch_name;
+	}
+	public int getBranch_id() {
+		return branch_id;
+	}
+	public void setBranch_id(int branch_id) {
+		this.branch_id = branch_id;
+	}
 	
 
 }

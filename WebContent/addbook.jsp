@@ -2,13 +2,15 @@
 <%@page import="java.util.ArrayList" %>
     <%@page import="java.util.List" %>
     <%@page import="bean.addbookBean" %>
+     <%@page import="bean.libraryBean" %>
+     <%@page import="bean.library_addressBean" %>
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Book | Reader's Heaven</title>
+    <title>Add Admin | Reader's Heaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -264,10 +266,20 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                     <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">BookQuantity</label>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                                <input type="text" class="form-control" placeholder="No of Quantity" name="count"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                       <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Select</label>
+                                                                <label class="login2 pull-right pull-right-pro">Select Category of Book</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                                                 <div class="form-select-list">
@@ -293,6 +305,7 @@
                                                             </div>
                                                         </div>
                                                     </div> 
+                                                   
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
@@ -314,6 +327,35 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                      <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Select Library</label>
+                                                            </div>
+                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                                                <div class="form-select-list">
+                                                                    <select class="form-control custom-select-value" name="librarys">
+                                                                    
+                                                                  <%List<library_addressBean>x=(ArrayList)request.getAttribute("library");
+                                                                  if(x==null){%>
+                                                                  <jsp.forward page="/addbookservlet?action=addbook.jsp" />
+                                                                  <%} else{
+                                                                	  x=(ArrayList)request.getAttribute("library");
+                                                                	  for(int i=0;i<x.size();i++)
+                                                                	  {
+                                                                	  library_addressBean l=x.get(i);
+                                                                	  System.out.println("hiii hello");%>
+                                                                	  <option value="<%=l.getLibrary_address_id()%>"><%= l.getBranch_name() %></option>
+                                                                <% }}%>  
+                                                                   
+                                                                    
+                                                                    
+                                                                    
+																	</select>														 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
                                                    
                                                                                                       
                                                    

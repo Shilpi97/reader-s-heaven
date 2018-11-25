@@ -18,6 +18,9 @@ import DAO.addbookDao;
 import DAO.loginDAO;
 //import DAO.loginDAO;
 import bean.addbookBean;
+import bean.addbookqtyBean;
+import bean.library_addressBean;
+import bean.library_book_mappingBean;
 import bean.userBean;
 
 /**
@@ -41,7 +44,8 @@ public class viewbookservlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
 		
-			List<addbookBean> book =null;
+			List<addbookqtyBean> book =null;
+			
 			try {
 				book= new addbookDao().getallbook();
 				request.setAttribute("book", book);
